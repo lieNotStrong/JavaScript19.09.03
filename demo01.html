@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript基本数据类型测试</title>
+    <script>
+        function testBollean(m,n) {
+            var a  = true;
+            if (m+n){
+                alert("TRUE");
+            } else {
+                alert("FALSE");
+            }
+            return 1;
+        }
+        function testReturn() {
+            alert(testBollean(-1,1));
+        }
+    </script>
+</head>
+<body>
+
+<button onclick="testBollean(-1,1)">测试布尔类型</button>
+<button onclick="testReturn()">测试返回值</button>
+</body>
+</html>
