@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript常用对象类型测试</title>
+
+    <script>
+        // JavaScript的常用对象类型有Array，function，Math，Object,还有json类型对象；
+        //在js中如果方法没有参数，那么方法后面的括号写不写都可以，但是最好还是写上;
+        function testArray() {
+
+            var arr = [1,"string",true,null];
+            alert(arr);
+            var arr2 = new Array();
+            arr2[0] = 1;
+            arr2[1] = -10;
+            arr2[4] = -5;
+            arr2[2] = 10;
+            arr2[3] = 99;
+            var arr4 = arr2.sort();
+            alert(arr4);
+            alert(arr2);
+            // var arr3 = arr2.sort(function (a,b) {
+            //     return a-b;
+            // })
+            // alert(arr3);
+
+            var b = function () {
+                var bb = 10;
+                return bb;
+            }
+            var json = [{name:"zhangsan",password:"123456"},{name:"lisi",password:"654321"}];
+            document.write(json[1].name)
+
+        }
+
+        function testEquals() {
+
+            // "=="：双等号判断的是值是否相等
+            // "==="：三等号判断的是地址和类型是否相等；
+            var a =  1;
+            var b= "1";
+            alert(a==b);
+            alert(a===b);
+
+        }
+        
+        function parseint1() {
+
+            //字符串转num类型：parseInt
+
+            var str = "112321asda";
+            var num = parseInt(str);
+
+            // alert(typeof num);
+
+            //number 转换为字符串  toString
+            var num = 4567;
+            var str = num
+
+            alert(typeof str)
+            //new Date()  获取当前时间
+            alert(new Date())
+            
+        }
+
+    </script>
+</head>
+<body>
+
+<button onclick="testArray(-1,1)">测试数组</button>
+<button onclick="testEquals()">测试"=="和"==="</button>
+<button onclick="parseint1()">测试parseInt</button>
+</body>
+</html>

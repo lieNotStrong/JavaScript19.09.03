@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>会员注册</title>
+
+    <script>
+        // js中删除一个变量用delete 关键字
+        function testRegistry() {
+            var username = document.getElementById("username").value;
+            var flag = false;
+            var flag02 = false;
+            if (username.length>5&&username.length!=null&&username.length!=""){
+                flag = true;
+            }
+            var password = document.getElementById("password").value;
+            var surePassword = document.getElementById("surePassword").value;
+            if (password==surePassword&&password!=""&&password!=null&&surePassword!=""&&surePassword!=null){
+                alert("注册成功")
+                flag02 = true;
+            }else {
+                alert("两次密码不行同");
+            }
+
+            return flag && flag02;
+        }
+
+        function testOnblur() {
+
+            var username = document.getElementById("username").value;
+            if (username.length>5){
+                document.getElementById("msg_info").innerHTML = "可以通过";
+                msg_info.style.color = "green";
+
+            }else {
+                document.getElementById("msg_info").innerHTML = "不可以通过";
+                msg_info.style.color = "red";
+            }
+        }
+        
+        function testBottun() {
+
+            document.getElementById('demo').innerHTML = new Date();
+        }
+
+        function test01() {
+            var inputValue = document.getElementById("input01").value;
+            if (inputValue<1||inputValue>10||isNaN(inputValue)){
+                document.getElementById("p1").innerText = "输入不合法";
+            } else {
+                document.getElementById("p1").innerText = "输入合法";
+            }
+        }
+
+
+
+        //官方写法 ，对1~10之间的数进行验证
+        function myFunction() {
+            var x, text;
+
+            // 获取 id="numb" 的值
+            x = document.getElementById("numb").value;
+
+            // 如果输入的值 x 不是数字或者小于 1 或者大于 10，则提示错误 Not a Number or less than one or greater than 10
+            if (isNaN(x) || x < 1 || x > 10) {
+                text = "输入错误";
+            } else {
+                text = "输入正确";
+            }
+            document.getElementById("demo").innerHTML = text;
+        }
+    </script>
+</head>
+<body>
+
+<form action="" onsubmit=" return testRegistry()">
+    <input id="username" type="text" name="username" value="" placeholder="用户名" onblur="testOnblur()">
+    <span id="msg_info"></span><br>
+    <input id="password" type="password" name="password" value="" placeholder="密码"><br>
+    <input id="surePassword" type="password" name="surePassword" value="" placeholder="确认密码"><br>
+    <input type="submit" value="点击注册">
+
+
+</form>
+<div id="demo"></div>
+<button onclick="this.innerHTML = new Date();">获取当前时间</button>
+
+
+
+    <p id="p1">请输入1~10之间的数</p>
+    <input type="text"  id="input01" value="">
+    <input type="submit" value="anni" onclick="test01()">
+
+
+<h1>JavaScript 验证输入</h1>
+
+<p>请输入 1 到 10 之间的数字：</p>
+
+<input id="numb">
+
+<button type="button" onclick="myFunction()">提交</button>
+
+<p id="demo"></p>
+
+
+
+
+
+</body>
+</html>
